@@ -33,3 +33,16 @@ int main() {
 
     Product products[] = {p1, p2};
     displayProducts(products, 2);
+
+void addProduct(Product products[], int& size, int id, string name, float price, int stock) {
+    Product newProduct(id, name, price, stock);
+    products[size] = newProduct;
+    size++;
+}
+
+int main() {
+    Product products[100];
+    int size = 0;
+    
+    addProduct(products, size, 3, "Ibuprofen", 10.0, 150);
+    displayProducts(products, size);
