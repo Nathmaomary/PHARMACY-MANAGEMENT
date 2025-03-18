@@ -56,3 +56,11 @@ int main() {
             break;
         }
     }
+    void editProduct(Product products[], int size, int id, string newName, float newPrice, int newStock) {
+    for (int i = 0; i < size; i++) {
+        if (products[i].getId() == id) {
+            products[i] = Product(id, newName, newPrice, newStock);
+            break;
+        }
+    }
+}
