@@ -46,3 +46,13 @@ int main() {
     
     addProduct(products, size, 3, "Ibuprofen", 10.0, 150);
     displayProducts(products, size);
+    void removeProduct(Product products[], int& size, int id) {
+    for (int i = 0; i < size; i++) {
+        if (products[i].getId() == id) {
+            for (int j = i; j < size - 1; j++) {
+                products[j] = products[j + 1];
+            }
+            size--;
+            break;
+        }
+    }
