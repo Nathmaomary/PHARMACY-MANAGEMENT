@@ -83,3 +83,21 @@ public:
 };
 
 #endif
+
+#include "sale.h"
+#include <iostream>
+using namespace std;
+
+Sale::Sale(int productId, int quantity, float totalPrice) {
+    this->productId = productId;
+    this->quantity = quantity;
+    this->totalPrice = totalPrice;
+}
+
+int Sale::getProductId() const { return productId; }
+int Sale::getQuantity() const { return quantity; }
+float Sale::getTotalPrice() const { return totalPrice; }
+
+void Sale::displaySale() const {
+    cout << "Product ID: " << productId << ", Quantity: " << quantity << ", Total Price: " << totalPrice << endl;
+}
