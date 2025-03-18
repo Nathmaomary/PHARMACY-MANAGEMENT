@@ -64,3 +64,22 @@ int main() {
         }
     }
 }
+#ifndef SALE_H
+#define SALE_H
+
+#include "product.h"
+
+class Sale {
+private:
+    int productId;
+    int quantity;
+    float totalPrice;
+public:
+    Sale(int productId, int quantity, float totalPrice);
+    int getProductId() const;
+    int getQuantity() const;
+    float getTotalPrice() const;
+    void displaySale() const;
+};
+
+#endif
