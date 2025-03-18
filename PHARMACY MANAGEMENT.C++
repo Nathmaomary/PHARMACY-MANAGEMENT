@@ -101,3 +101,18 @@ float Sale::getTotalPrice() const { return totalPrice; }
 void Sale::displaySale() const {
     cout << "Product ID: " << productId << ", Quantity: " << quantity << ", Total Price: " << totalPrice << endl;
 }
+void processSale(Product products[], int size, int productId, int quantity) {
+    for (int i = 0; i < size; i++) {
+        if (products[i].getId() == productId) {
+            if (products[i].getStock() >= quantity) {
+                products[i].setStock(products[i].getStock() - quantity);
+                float totalPrice = products[i].getPrice() * quantity;
+                Sale sale(productId, quantity, totalPrice);
+                sale.displaySale();
+            } else {
+                cout << "Not enough stock!" << endl;
+            }
+            break;
+        }
+    }
+}
